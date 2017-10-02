@@ -1,4 +1,5 @@
 SiteBlank
 =========
 
-A Symfony project created on October 2, 2017, 8:02 pm.
+- php v 7.*
+- symfony 3.3.9
