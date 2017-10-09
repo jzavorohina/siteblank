@@ -1,0 +1,33 @@
+# src/AppBundle/Resources/config/doctrine/Users.orm.yml
+AppBundle\Entity\Users:
+    type: entity
+    table: users
+
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 100
+        login:
+            type: string
+            length: 100
+        eid:
+            type: integer
+            length: 11
+        password:
+            type: string
+            length: 100
+        moderator:
+            type: integer
+            length: 1
+    manyToOne:
+            Emails:
+            targetEntity: AppBundle\Entity\Emails
+            mappedBy:
+            joinColumn:
+                name: id
+                referencedColName: eid
+                

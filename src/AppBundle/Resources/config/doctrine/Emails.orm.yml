@@ -1,0 +1,12 @@
+# src/AppBundle/Resources/config/doctrine/Emails.orm.yml
+AppBundle\Entity\Emails:
+    type: entity
+    table: emails
+    id:
+        eid:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        address:
+            type: string
+            length: 100

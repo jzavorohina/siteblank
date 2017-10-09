@@ -7,9 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class NewController extends Controller {
 
-    /**
-     * @Route("/new", name="newpage")
-     */    
     public function indexAction (){
         return $this->render('default/new.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,

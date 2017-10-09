@@ -1,3 +1,7 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+new_page:
+    path: /new
+    defaults: {_controller: AppBundle:New:index}
