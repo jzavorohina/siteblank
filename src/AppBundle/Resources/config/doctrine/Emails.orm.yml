@@ -10,3 +10,10 @@ AppBundle\Entity\Emails:
         address:
             type: string
             length: 100
+
+    ManyToOne:
+            user:
+            targetEntity: AppBundle\Entity\User
+            joinColumn:
+                name: user
+                referencedColName: id

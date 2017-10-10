@@ -23,11 +23,5 @@ AppBundle\Entity\Users:
         moderator:
             type: integer
             length: 1
-    manyToOne:
-            Emails:
-            targetEntity: AppBundle\Entity\Emails
-            mappedBy:
-            joinColumn:
-                name: id
-                referencedColName: eid
-                
+        
+
