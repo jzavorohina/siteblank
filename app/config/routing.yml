@@ -3,5 +3,25 @@ app:
     type: annotation
 
 new_page:
-    path: /new
-    defaults: {_controller: AppBundle:New:index}
+    path: /list
+    defaults: {_controller: AppBundle:List:index}
+
+users_index:
+    path: /users
+    defaults: {_controller: AppBundle:Users:index}
+
+users_show:
+    path: /users/show/{id}
+    defaults: {_controller: AppBundle:Users:show}
+
+users_new:
+    path: /users/new
+    defaults: {_controller: AppBundle:Users:new}
+
+users_edit:
+    path: /users/edit/{id}
+    defaults: {_controller: AppBundle:Users:edit}
+
+users_delete:
+    path: /users/delete/{id}
+    defaults: {_controller: AppBundle:Users:delete}

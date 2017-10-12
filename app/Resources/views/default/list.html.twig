@@ -1,0 +1,10 @@
+<h1>User List</h1>
+
+<table>
+ <tr>
+ <th>Name</th> <th>Login</th> <th>Moderator</th>
+ </tr>
+{% for user in users %}
+   <tr><td>{{ user.name }}</td><td>{{ user.login }}</td><td>{{ user.moderator }}</td></tr>
+{% endfor %}
+</table>
