@@ -1,19 +1,25 @@
 # src/AppBundle/Resources/config/doctrine/Emails.orm.yml
 AppBundle\Entity\Emails:
     type: entity
-    table: emails
+    table: Emails
     id:
-        eid:
+        id:
             type: integer
             generator: { strategy: AUTO }
     fields:
+        uid:
+            type: integer
+            length: 11
         address:
             type: string
             length: 100
-
-    ManyToOne:
-            user:
-            targetEntity: AppBundle\Entity\User
-            joinColumn:
-                name: user
-                referencedColName: id
+        test:
+            type: string
+            length: 100
+    manyToOne:
+            users:
+                targetEntity: AppBundle\Entity\Users
+                inversedBy: emails
+                joinColumn:
+                    name: uid
+                    referencedColumnName: id

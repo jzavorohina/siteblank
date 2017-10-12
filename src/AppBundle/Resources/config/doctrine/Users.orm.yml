@@ -1,7 +1,7 @@
 # src/AppBundle/Resources/config/doctrine/Users.orm.yml
 AppBundle\Entity\Users:
     type: entity
-    table: users
+    table: Users
 
     id:
         id:
@@ -14,14 +14,18 @@ AppBundle\Entity\Users:
         login:
             type: string
             length: 100
-        eid:
-            type: integer
-            length: 11
         password:
             type: string
             length: 100
         moderator:
             type: integer
             length: 1
+    oneToMany:
+        emails:
+            targetEntity: AppBundle\Entity\Emails
+            mappedBy: users
+            joinColumn:
+                name: id
+                referencedColumnName: uid
         
 

@@ -1,22 +1,70 @@
 <?php
-// src/AppBundle/Entity/Emails.php
+
 namespace AppBundle\Entity;
 
+/**
+ * Emails
+ */
 class Emails
 {
+    /**
+     * @var integer
+     */
+    private $id;
 
-    private $eid;
+    /**
+     * @var integer
+     */
+    private $uid;
+
+    /**
+     * @var string
+     */
     private $address;
+
+    /**
+     * @var string
+     */
+    private $test;
+
+    /**
+     * @var \AppBundle\Entity\Users
+     */
+    private $users;
 
 
     /**
-     * Get eid
+     * Get id
      *
      * @return integer
      */
-    public function getEid()
+    public function getId()
     {
-        return $this->eid;
+        return $this->id;
+    }
+
+    /**
+     * Set uid
+     *
+     * @param integer $uid
+     *
+     * @return Emails
+     */
+    public function setUid($uid)
+    {
+        $this->uid = $uid;
+
+        return $this;
+    }
+
+    /**
+     * Get uid
+     *
+     * @return integer
+     */
+    public function getUid()
+    {
+        return $this->uid;
     }
 
     /**
@@ -42,4 +90,53 @@ class Emails
     {
         return $this->address;
     }
+
+    /**
+     * Set test
+     *
+     * @param string $test
+     *
+     * @return Emails
+     */
+    public function setTest($test)
+    {
+        $this->test = $test;
+
+        return $this;
+    }
+
+    /**
+     * Get test
+     *
+     * @return string
+     */
+    public function getTest()
+    {
+        return $this->test;
+    }
+
+    /**
+     * Set users
+     *
+     * @param \AppBundle\Entity\Users $users
+     *
+     * @return Emails
+     */
+    public function setUsers(\AppBundle\Entity\Users $users = null)
+    {
+        $this->users = $users;
+
+        return $this;
+    }
+
+    /**
+     * Get users
+     *
+     * @return \AppBundle\Entity\Users
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
 }
+

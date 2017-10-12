@@ -1,17 +1,49 @@
 <?php
-// src/AppBundle/Entity/Users.php
+
 namespace AppBundle\Entity;
 
+/**
+ * Users
+ */
 class Users
 {
-
+    /**
+     * @var integer
+     */
     private $id;
-    private $eid;
+
+    /**
+     * @var string
+     */
     private $name;
+
+    /**
+     * @var string
+     */
     private $login;
+
+    /**
+     * @var string
+     */
     private $password;
+
+    /**
+     * @var integer
+     */
     private $moderator;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $emails;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->emails = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -72,30 +104,6 @@ class Users
     }
 
     /**
-     * Set eid
-     *
-     * @param integer $eid
-     *
-     * @return Users
-     */
-    public function setEid($eid)
-    {
-        $this->eid = $eid;
-
-        return $this;
-    }
-
-    /**
-     * Get eid
-     *
-     * @return integer
-     */
-    public function getEid()
-    {
-        return $this->eid;
-    }
-
-    /**
      * Set password
      *
      * @param string $password
@@ -142,4 +150,39 @@ class Users
     {
         return $this->moderator;
     }
+
+    /**
+     * Add email
+     *
+     * @param \AppBundle\Entity\Emails $email
+     *
+     * @return Users
+     */
+    public function addEmail(\AppBundle\Entity\Emails $email)
+    {
+        $this->emails[] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Remove email
+     *
+     * @param \AppBundle\Entity\Emails $email
+     */
+    public function removeEmail(\AppBundle\Entity\Emails $email)
+    {
+        $this->emails->removeElement($email);
+    }
+
+    /**
+     * Get emails
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEmails()
+    {
+        return $this->emails;
+    }
 }
+
