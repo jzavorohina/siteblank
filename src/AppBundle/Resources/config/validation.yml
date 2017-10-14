@@ -1,0 +1,10 @@
+AppBundle\Entity\Users:
+    properties:
+        name:
+          - NotBlank: ~
+        login:
+          - NotBlank: ~
+        password:
+          - NotBlank: ~
+        moderator:
+          - NotBlank: ~
